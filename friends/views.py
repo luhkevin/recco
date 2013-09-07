@@ -20,7 +20,9 @@ def index(request):
             u = User.objects.get(username = user).person
             t = lookup[0].person
             f = Friendship(source = u, target = t)
+            f2 = Friendship(source = t, target = u)
             f.save()
+            f2.save()
             fr = Friendship.objects.filter(source__user__username__exact = user)
             friends = map(lambda f: f.target, fr)
             return render(request, 'friends/index.html', {'error': 'successful!', 'friends': friends})
