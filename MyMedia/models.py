@@ -6,6 +6,9 @@ from django.db import models
 class Media(models.Model):
     name = models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return self.name
+
 class Recommendation(models.Model):
     friends = models.ForeignKey('friends.Friendship')
     media = models.ForeignKey('MyMedia.Media')

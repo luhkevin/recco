@@ -6,7 +6,6 @@ from MyMedia.models import Media
 def index(request):
   if request.POST:
     newrec = request.POST.get("new")
-    #if not newrec in Media.objects.all()
     r = Media(name = newrec)
     r.save()
   recs = Media.objects.order_by('name')
