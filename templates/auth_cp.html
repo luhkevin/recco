@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="auth_style.css"/>
+<title>Log in to Recco</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    
+    <form action="/login/" method="post"> {% csrf_token %}
+        {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        
+    <div> 
+        {{ state }}     
+        <h1>Username: </h1>
+        <input type="text" name="username" value="{{ username }}" />
+
+        <h1>Password: </h1>
+        <input type="password" name="password" value="" /><br />
+
+
+
+        <input type="submit" value="Log In" />
+    </div>
+    </form>
+</body>
+</html>
