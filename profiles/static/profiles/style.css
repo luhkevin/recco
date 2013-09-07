@@ -3,3 +3,15 @@ body{
 
 }
 
+#leftcol{
+	border: 2px solid #009900;
+}
+
+#rightcol{
+	border: 2px solid #FF0000;
+
+}
+
+#bothcol{
+	border: 2px solid #A0A0A0;
+}
