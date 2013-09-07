@@ -17,7 +17,9 @@ def index(request):
             return render(request, 'friends/index.html', {'error': 'that is not a valid user', 'friends': friends}) 
         
         else:
-            f = Friendship(source = user, target = newf)
+            u = User.objects.get(username = user).person
+            t = lookup[0].person
+            f = Friendship(source = u, target = t)
             f.save()
             fr = Friendship.objects.filter(source__user__username__exact = user)
             friends = map(lambda f: f.target, fr)
@@ -26,6 +28,6 @@ def index(request):
     else:
         fr = Friendship.objects.filter(source__user__username__exact = user)
         friends = map(lambda f: f.target, fr)
-        return reder(request, 'friends/index.html', {'error':'', 'friends':friends})
+        return render(request, 'friends/index.html', {'error':'', 'friends':friends})
 
 
