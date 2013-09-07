@@ -1,15 +1,21 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'profiles/style.css' %}" />
+
 <!DOCTYPE html>
 
 <html>
 <body>
     {{error}} <br>
+    <div align = "center">
     <b> Add a recommendation </b>
     <form method = "post"> {% csrf_token %}
         <input type = "hidden" name = "fid" value = "1">
         <input type = "text" name = "new">
         <input type = "submit">
     </form>
-    <div style="float: left; width: 50%;">
+    </div>
+
+    <div style="float: left; margin-left: 60px;">
         <ul>
         
         <b> Recommended to {{friend}} </b>
@@ -25,11 +31,11 @@
         {% if recto %}
             <input type = "submit" value = "Completed">
         {% endif %}
-        </form>
+        </form> 
         </ul>
     </div>
    
-    <div style="float: right; width: 50%;">
+    <div style="float: right; margin-right: 60px;">
         <ul>
             <b> Recommended by {{friend}} </b>
                 {% for r in recfrom %}
