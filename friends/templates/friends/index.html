@@ -20,7 +20,7 @@
     <div id="friends">
         {{error}}    
         {% for f in friends %}
-            <pre>{{f.firstname}} {{f.lastname}}</pre>
+        <a href= "../../profiles/{{f.user.username}}">{{f.firstname}} {{f.lastname}}</a>
         {% endfor %}
     </div>
 
