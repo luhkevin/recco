@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+    {{error}}
+    <b> Add a recommendation </b>
+    <form action = "post">
+        <input type = "text" name = "new">
+        <input type = "submit">
+    </form>
+    <b> Recommended to {{friend}} </b>
+    {% for r in recto %}
+        {{r.name}}
+    {% endfor %}
+
+    <br>
+
+    <b> Recommended by {{friend}} </b>
+    {% for r in recfrom %}
+        {{r.name}}
+    {% endfor %}
+</body>
+</html>
