@@ -1,3 +1,31 @@
-li a {
+h1{
 	color: green;
+    font-family: Arial;
 }
+
+body{
+    color: black;
+    font-family: Arial;
+}
+
+div{
+    display: block;
+}
+
+#sidepanel{
+    position: absolute;
+    width: 200px;
+
+}
+
+#button{
+    color: black;
+    background-color: #9cf;
+    border-top: 1px solid #c0ffff;
+    border-right: 1px solid #00f;
+    border-bottom: 1px solid #00f;
+    border-left: 1px solid #c0ffff;
+    padding: 0;
+    margin: 0;
+}
+

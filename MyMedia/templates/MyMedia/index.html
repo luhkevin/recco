@@ -5,17 +5,17 @@
 
 <html>
 <body>
-  <form method = "post"> {% csrf_token %}
-	<div id = 'submit'>
-    <input type="text" name="new" size="35" placeholder="submit">
-	</div>
+  <form method = "post" name="myForm"> 
+      {% csrf_token %}
+    <input id="submit" type="text" name="new" size="31" placeholder="Submit">
   </form>
-  
- <div id = "media">
-  {% for rec in recs %}
-   <ol = "element"> {{rec.name}}</ol> 	
-  {% endfor %}
-</div>
+  <div id = "media">
+    {% for rec in recs %}
+        {% if rec.name %}
+            <ol> {{rec.name}}</ol> 	
+        {% endif %}
+    {% endfor %}
+  </div>
 
 </body>
 </html>

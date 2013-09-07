@@ -1,8 +1,14 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{%static 'startpage/style.css' %}" />
 <!DOCTYPE html>
 
 <html>
   <body>
-    <b> you are logged in as {{username}}</b>
-    <div id="links"> <a href="../mymedia"> My media </a> </div>
+  <h1 align = "center"> Welcome, {{username}}!</h1>
+    <div id="sidepanel"> 
+        <div id="button">
+            <a href="../mymedia">My media </a> 
+        </div>
+    </div>
   </body>
 </html>
