@@ -32,30 +32,42 @@ def index(request, target):
     recto_o = Recommendation.objects.filter(friends = forwardfriendship)
     recfrom_o = Recommendation.objects.filter(friends = backwardfriendship)
 
-## NEW RECOMMENDATION #
-#######################
-    if request.POST:
+# handle form #
+    if request.method == "POST":
+        fid = request.POST.get("fid")
 
-        newrecname = request.POST.get("new")
+        ## NEW RECOMMENDATION #
+        #######################
 
-        # lookup media
-        medialookup = Media.objects.filter(name = newrecname)
+        if fid == "1":
+            newrecname = request.POST.get("new")
 
+            # lookup media
+            medialookup = Media.objects.filter(name = newrecname)
 
-        # create new media if it doesn't exist
-        if len(medialookup) == 0 : 
-            newmedia = Media(name = newrecname);
-            newmedia.save()
-            recmedia = newmedia;
-        else :
-            recmedia = medialookup[0]
+            # create new media if it doesn't exist
+            if len(medialookup) == 0 : 
+                newmedia = Media(name = newrecname);
+                newmedia.save()
+                recmedia = newmedia;
+            else :
+                recmedia = medialookup[0]
 
-        # make new recommendation
-        newrec = Recommendation(friends = forwardfriendship, media = recmedia, time = timezone.now())
-        newrec.save()
-#######################
-
-
+            # make new recommendation
+            newrec = Recommendation(friends = forwardfriendship, media = recmedia, time = timezone.now())
+            newrec.save()
+        if fid == '2':
+            comps = request.POST.getlist("completed")
+            for rec in recto_o:
+                for m in comps:
+                    if rec.media.name == m:
+                        c = Completed(by = targetlookup[0].person, media = rec.media, time = timezone.now())
+                        c.save()
+                        rec.delete()
+    # find recommendations, to and from
+    recto_o = Recommendation.objects.filter(friends = forwardfriendship)
+    recfrom_o = Recommendation.objects.filter(friends = backwardfriendship)       
+    
     # just display stuff
 
     recto = map(lambda f: f.media, recto_o)
