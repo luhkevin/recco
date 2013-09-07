@@ -11,7 +11,7 @@ class Recommendation(models.Model):
     media = models.ForeignKey(Media)
     time = models.DateTimeField('date recommended')
 
-class Completed(models.Model)
+class Completed(models.Model):
     by = models.ForeignKey(Person)
     media = models.ForeignKey(Media)
     time = models.DateTimeField('date completed')
