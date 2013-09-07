@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'auth',
     'startpage',
+    'MyMedia',
 )
 
 # A sample logging configuration. The only tangible logging
