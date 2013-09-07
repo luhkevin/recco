@@ -16,6 +16,8 @@ urlpatterns = patterns('',
 
     url(r'^mymedia/', 'MyMedia.views.index'),
 
+    url(r'^profiles/', include('profiles.urls')),
+
     url(r'^friends/', 'friends.views.index'),
 
     url(r'^totalrecommendations/', 'TotalRecommendations.views.index'),
