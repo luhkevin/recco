@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # url(r'^recco/', include('recco.foo.urls')),
     url(r'^login/$', 'auth.views.login_user'),
 
+    url(r'^createaccount/$', 'createaccount.views.createaccount'),
+
     url(r'^home/', 'startpage.views.homepage'),
 
     url(r'^mymedia/', 'MyMedia.views.index'),
