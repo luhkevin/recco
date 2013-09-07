@@ -1,14 +1,11 @@
-#submit{
+form{
 	margin: 0 auto 20px;
 	position: relative;
-	font-size: 16px;
-	color: #09c;
+	font-size: 19px;
 	display: block;
-	width: 245px;
-	padding: 19px 29px 2px;
+	width: 248px;
+	padding: 19px 15px 1px;
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-	    
-
 }
 
 #media {
@@ -16,15 +13,15 @@
 	position: relative;
 	width: 245px;
 	display: block;
-	padding: 1px 29px 2px;
+	padding: 1px 28px 1px;
 }	
 
 #media ol{
-	display: block;
+	display: inherit;
 	margin:0px -4px 0px 0px;
 	color: #222;
 	font-size: 18px;
-	padding: 0px 15px 0px;
+	padding: 1px 15px 0px;
 	border: solid 1px #939393;
 	list-style: square;
 	background: #CCFFFF;
