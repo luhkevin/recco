@@ -1,11 +1,37 @@
 form{
 	margin: 0 auto 20px;
 	position: relative;
-	font-size: 19px;
+	font-size: 20px;
 	display: block;
 	width: 248px;
-	padding: 19px 15px 1px;
+	padding: 19px 20px 1px;
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#sidepanel{
+	position: absolute;
+	width: 200px;
+}
+
+li {
+	list-style-type: none;
+	margin: 0; 
+	padding: 0;
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+}
+
+li a {
+	text-decoration: none;
+	color: #000;
+	display:block;
+	width: 200px;
+	-webkit-transition: font-dize 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover{
+	font-size: 20px;
+	background: #f6f6f6;
 }
 
 #media {
@@ -23,7 +49,8 @@ form{
 	font-size: 18px;
 	padding: 1px 15px 0px;
 	border: solid 1px #939393;
-	list-style: square;
+	list-style: none;
 	background: #CCFFFF;
 	background-color: #E8EBDF;
 }
+
