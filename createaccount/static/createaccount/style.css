@@ -1,0 +1,17 @@
+body{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f6f6f6;
+	position: relative;
+	display: block;
+}
+
+#container{
+	padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	position: relative;
+	display: block;
+	height: 175px;
+	width: 245px;
+
+}

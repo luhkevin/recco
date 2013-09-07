@@ -1,3 +1,6 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'createaccount/style.css' %}" />
+
 <!DOCTYPE html>
 
 <html>
@@ -5,11 +8,13 @@
     <title>Create New Recco Account</title>
 </head>
 <body>
+    <div class = "container">
     <!-- Can customize form with more detail: https://docs.djangoproject.com/en/dev/topics/forms/ -->
-    <form action="/createaccount/" method="post">{% csrf_token %}
-        {{ form.as_p }}
-    <input type="submit" value="Submit" />
-    </form>
+    	<form action="/createaccount/" method="post">{% csrf_token %}
+       	 {{ form.as_p }}
+   	 <input type="submit" value="Submit" />
+   	 </form>
+    </div>
 
 </body>
 
