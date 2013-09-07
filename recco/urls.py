@@ -10,10 +10,13 @@ urlpatterns = patterns('',
     # url(r'^recco/', include('recco.foo.urls')),
     url(r'^login/$', 'auth.views.login_user'),
 
+    url(r'^createaccount/$', 'createaccount.views.createaccount'),
+
     url(r'^home/', 'startpage.views.homepage'),
 
     url(r'^mymedia/', 'MyMedia.views.index'),
-
+    
+    url(r'^friends/', 'friends.views.index'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

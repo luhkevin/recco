@@ -1,3 +1,7 @@
+from django.contrib.auth.models import User
+from startpage.models import Person
+from django import forms
+
 class CreateUserForm(forms.Form):
     username = forms.CharField(max_length=30)
     firstname = forms.CharField(max_length=30)
@@ -20,11 +24,13 @@ class CreateUserForm(forms.Form):
         return self.cleaned_data
 
     def save(self):
-        new_user = User.objects.create_user(username=self.cleaned_data['username'], password = self.clean_data['password'])
+        new_user = User.objects.create_user(username=self.cleaned_data['username'], password = self.cleaned_data['password'])
 
         new_user.save();
 
-        new_person = Person.objects.create_person(firstname=self.cleaned_data['firstname'], lastname=self.cleaned_data['lastname'], username=self.cleaned_data['username'])
+        new_person = Person(firstname=self.cleaned_data['firstname'], lastname=self.cleaned_data['lastname'], user = new_user)
+
+        new_person.save();
 
         return new_person
 
