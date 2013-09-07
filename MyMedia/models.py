@@ -16,3 +16,5 @@ class Completed(models.Model):
     media = models.ForeignKey('MyMedia.Media')
     time = models.DateTimeField('date completed')
 
+    def __unicode__(self):
+        return self.name
