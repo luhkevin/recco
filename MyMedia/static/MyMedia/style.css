@@ -1,12 +1,31 @@
 #submit{
 	margin: 0 auto 20px;
 	position: relative;
-	font-size: 14px;
+	font-size: 16px;
 	color: #09c;
 	display: block;
 	width: 245px;
-	padding: 19px 29px 29px;
+	padding: 19px 29px 2px;
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 	    
+
+}
+
+#media {
+	margin: 0 auto 20px;
+	position: relative;
+	width: 245px;
+	display: block;
+	padding: 1px 29px 2px;
+}	
+
+#media ol{
+	color: #222;
+	font-size: 20px;
+	border: solid 1px gray;
+	list-style: square;
+	background: #CCFFFF;
+	background-color: #E8EBDF;
+	
 
 }
