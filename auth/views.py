@@ -1,5 +1,4 @@
 # Create your views here.
-
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
@@ -19,10 +18,10 @@ def login_user(request):
                 login(request, user)
                 state = "Successfully logged in."
                 return HttpResponseRedirect('/home')
-            else: 
+            else:
                 state = "Account inactive."
         else:
             state = "User/pass incorrect."
     c = {'state':state, 'username':username};
     c.update(csrf(request))
-    return render_to_response('auth.html',c)
+    return render_to_response('auth/index.html',c)
