@@ -5,29 +5,17 @@
 
 <html>
 <body>
-  <form method = "post" onsubmit="call_function();"> {% csrf_token %}
-        <input type="text" name="new" size="31" placeholder="Submit">
-
-  <script type="text/javascript">
-    function call_function(){
-        window.onbeforeunload = function(){
-            var input_elems = document.getElementByTagName('input');
-            for(var i = 0; i < input_elems.length; i++) {
-                if(input_elems[i].type === 'text'){
-                    input_elems[i].innerHTML = "reset_value";
-                }
-            }
-        }
-    }
-  </script>
- </form>  
- <div id = "media">
-  {% for rec in recs %}
-    {% if rec.name %}
-        <ol> {{rec.name}}</ol> 	
-    {% endif %}
-  {% endfor %}
-</div>
+  <form method = "post" name="myForm"> 
+      {% csrf_token %}
+    <input id="submit" type="text" name="new" size="31" placeholder="Submit">
+  </form>
+  <div id = "media">
+    {% for rec in recs %}
+        {% if rec.name %}
+            <ol> {{rec.name}}</ol> 	
+        {% endif %}
+    {% endfor %}
+  </div>
 
 </body>
 </html>
