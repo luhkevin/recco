@@ -1,7 +1,7 @@
 # Create your views here.
 
 from django.shortcuts import render
-from models import Media
+from MyMedia.models import Media
 
 def index(request):
   if request.POST:
@@ -11,6 +11,6 @@ def index(request):
     r.save()
   
   recs = Media.objects.order_by('name')
-  return render(request, 'MyMedia/index.html', {recs: recs})
+  return render(request, 'MyMedia/index.html', {'recs': recs})
 
 
