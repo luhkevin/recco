@@ -16,6 +16,8 @@ urlpatterns = patterns('',
 
     url(r'^mymedia/', 'MyMedia.views.index'),
 
+    url(r'^profiles/', include('profiles.urls')),
+
     url(r'^friends/', 'friends.views.index'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
