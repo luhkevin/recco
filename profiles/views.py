@@ -1,7 +1,66 @@
 # Create your views here.
 
+from django.http import HttpResponseRedirect
+from django.utils import timezone
 from django.shortcuts import render
 from friends.models import Friendship
 from django.contrib.auth.models import User
+from MyMedia.models import *
+
+def profile(request, target):
+    user = request.user.username
+
+    targetlookup = User.objects.filter(username=target)
+
+    if len(lookup) == 0:
+        return HTTPResponseRedirect('/home')
+
+
+    forwardfriendlookup = Friendship.objects.filter(source_user_username_exact = user, target_user_username_exact = target)
+
+    if len(forwardfriendlookup) = 0:
+        return render(request, 'profiles/index.html', {'error': 'Friendship not found'})
+
+    forwardfriendship = forwardfriendlookup[0]
+
+    backwardfriendlookup = Friendship.objects.filter(source_user_username_exact = target, target_user_username_exact = source)
+
+    backwardfriendship = backwardfriendlookup[0]
+
+    # find recommendations, to and from
+    recto_o = Recommendation.objects.filter(friends = forwardfriendship)
+    recfrom_o = Recommendation.objects.filter(friends = backwardfriendship)
+
+## NEW RECOMMENDATION #
+#######################
+    if request.POST:
+
+        newrecname = request.POST.get("new")
+
+        # lookup media
+        medialookup = Media.objects.filter(name = newrecname)
+
+
+        # create new media if it doesn't exist
+        if len(medialookup) == 0 : 
+            newmedia = Media(name = newrecname);
+            newmedia.save()
+            recmedia = newmedia;
+        else :
+            recmedia = medialookup[0]
+
+        # make new recommendation
+        newrec = Recommendation(friends = forwardfriendship, media = recmedia, time = timezone.now())
+        newrec.save()
+#######################
+
+
+    # just display stuff
+
+    recto = map(lambda f: f.media, recto_o)
+    recfrom = map(lambda f: f.media, recfrom_o)
+
+    return render(request, 'profiles/index.html', {'error' = '', 'recto' = recto, 'recfrom' = recfrom})
+
 
 
