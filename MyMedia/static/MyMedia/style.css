@@ -20,12 +20,13 @@
 }	
 
 #media ol{
+	display: block;
+	margin:0px -4px 0px 0px;
 	color: #222;
-	font-size: 20px;
-	border: solid 1px gray;
+	font-size: 18px;
+	padding: 0px 15px 0px;
+	border: solid 1px #939393;
 	list-style: square;
 	background: #CCFFFF;
 	background-color: #E8EBDF;
-	
-
 }
