@@ -6,7 +6,6 @@ from django.core.context_processors import csrf
 from django.contrib.auth import authenticate, login
 
 def login_user(request):
-    state = "Please log in:"
     username = password = ''
     if request.POST:
         username = request.POST.get('username')
@@ -22,6 +21,6 @@ def login_user(request):
                 state = "Account inactive."
         else:
             state = "User/pass incorrect."
-    c = {'state':state, 'username':username};
+    c = {'username':username};
     c.update(csrf(request))
     return render_to_response('auth/index.html',c)
