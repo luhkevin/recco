@@ -9,23 +9,33 @@
         <input type = "text" name = "new">
         <input type = "submit">
     </form>
-    <b> Recommended to {{friend}} </b>
+    <div style="float: left; width: 50%;">
+        <ul>
+        
+        <b> Recommended to {{friend}} </b>
     
-    <form method = "post"> {% csrf_token %}
-        <input type = "hidden" name = "fid" value = "2">
-    {% for r in recto %}
-        {{r.name}} 
-        <input type = "checkbox" name = "completed"  value = {{r.name}}><br>
-    {% endfor %}
-    {% if recto %}
-        <input type = "submit" value = "Completed">
-    {% endif %}
-    </form>
-    <br>
-    
-    <b> Recommended by {{friend}} </b>
-    {% for r in recfrom %}
-        {{r.name}} <br>
-    {% endfor %}
+        <form method = "post"> {% csrf_token %}
+            <input type = "hidden" name = "fid" value = "2">
+        {% for r in recto %}
+            <ol>
+            <input type = "checkbox" name = "completed"  value = {{r.name}}>
+            {{r.name}}
+            </ol>
+        {% endfor %}
+        {% if recto %}
+            <input type = "submit" value = "Completed">
+        {% endif %}
+        </form>
+        </ul>
+    </div>
+   
+    <div style="float: right; width: 50%;">
+        <ul>
+            <b> Recommended by {{friend}} </b>
+                {% for r in recfrom %}
+                <ol>{{r.name}}</ol>
+                {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,3 +1,7 @@
+body{
+    background-color: #F6F6F6;
+}
+
 form{
 	margin: 0 auto 20px;
 	position: relative;
@@ -26,12 +30,15 @@ li a {
 	color: #000;
 	display:block;
 	width: 200px;
+	-moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+	-o-transition: font-size 0.3s ease, background-color 0.3s ease;
 	-webkit-transition: font-dize 0.3s ease, background-color 0.3s ease;
+	transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
 li a:hover{
 	font-size: 20px;
-	background: #f6f6f6;
+	background: #A0A0A0;
 }
 
 #media {

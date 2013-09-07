@@ -4,6 +4,7 @@ h1{
 }
 
 body{
+    background-color: #F6F6F6;
     color: black;
     font-family: Arial;
 }
@@ -40,7 +41,7 @@ li a {
 
 li a:hover {
 	font-size: 20px;
-	background: #f6f6f6;
+	background: #A0A0A0;
 }
 
 

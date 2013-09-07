@@ -1,3 +1,7 @@
+body{
+    background-color: #F6F6F6;
+}
+
 form{
 	margin: 0 auto 20px;
 	position: relative:
@@ -22,6 +26,18 @@ form{
     padding: 1px 28px 1px;
 }
 
+#friends ol{
+	display: inherit;
+	margin: 0px -4px 0px 0px;
+	color: #222;
+	font-size: 18px;
+	padding: 1px 15px 0px;
+	border: solid 1px #939393;
+	list-style: none;
+	background: #CCFFFF;
+	background-color: #E8EBDF;
+}
+
 li {
 	list-style-type: none;
 	margin: 0;
@@ -34,10 +50,13 @@ li a {
 	text-decoration: none;	color: #000;
 	display: block;	
 	width: 200px;
-	-webkit-transition: font-dize 0.3s ease, background-color 0.3s ease;
+	-moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+	-o-transition: font-size 0.3s ease, background-color 0.3s ease;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+	transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
 li a:hover{
 	font-size: 20px;
-	background: #f6f6f6;
+	background: #A0A0A0;
 }

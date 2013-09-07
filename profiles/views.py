@@ -67,7 +67,6 @@ def index(request, target):
     # find recommendations, to and from
     recto_o = Recommendation.objects.filter(friends = forwardfriendship)
     recfrom_o = Recommendation.objects.filter(friends = backwardfriendship)       
-    
     # just display stuff
 
     recto = map(lambda f: f.media, recto_o)

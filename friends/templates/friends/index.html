@@ -9,6 +9,7 @@
 		<li><a href = "../home")>Home</a></li>
 		<li><a href = "../mymedia")>My Media</a></li>
 		<li><a href = "../totalrecommendations")>Recommendations</a></li>
+		<li><a href = "../friends")>Friends</a></li>
    	</div>
 	 
     <form method = "post" name = "myForm"> {% csrf_token %}
@@ -19,8 +20,8 @@
     <div id="friends">
         {{error}}    
         {% for f in friends %}
-            <pre>{{f.firstname}} {{f.lastname}}</pre>
-        {% endfor %}
+       <ol> <a href= "../../profiles/{{f.user.username}}">{{f.firstname}} {{f.lastname}}</a>
+     </ol>   {% endfor %}
     </div>
 
 </body>

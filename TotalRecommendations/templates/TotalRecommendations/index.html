@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'TotalRecommendations/style.css' %}" />
 
 <!DOCTYPE html>
 
@@ -11,15 +11,10 @@
 		<li><a href = "../totalrecommendations")>Recommendations</a></li>
 		<li><a href = "../friends")>Friends</a></li>
 	</div>
-  <form method = "post" name="myForm"> 
-      {% csrf_token %}
-    <input id="submit" type="text" name="new" size="31" placeholder="Submit">
   </form>
   <div id = "media">
-    {% for rec in recs %}
-        {% if rec.name %}
-            <ol> {{rec.name}}</ol> 	
-        {% endif %}
+    {% for total_rec in total_recs %}
+        <ol> {{total_rec.name}}</ol> 	
     {% endfor %}
   </div>
 
