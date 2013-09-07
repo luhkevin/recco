@@ -20,9 +20,6 @@ urlpatterns = patterns('',
 
     url(r'^totalrecommendations/', 'TotalRecommendations.views.index'),
 
-    url(r'^createaccount/', 'createaccount.views.createaccount'),
-
-
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
         # Uncomment the next line to enable the admin:
