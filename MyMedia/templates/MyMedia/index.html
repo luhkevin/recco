@@ -1,19 +1,21 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
+
 <!DOCTYPE html>
 
 <html>
 <body>
-  <form method = "post"> 
-    <div id = "submit">
-      {% csrf_token %}
-    <input type="text" name="new">
-    <input type="submit">
-    </div>
+  <form method = "post"> {% csrf_token %}
+	<div id = 'submit'>
+    <input type="text" name="new" size="35" placeholder="submit">
+	</div>
   </form>
   
-  <br/>
+ <div id = "media">
   {% for rec in recs %}
-    {{rec.name}} <br/>
+   <ol = "element"> {{rec.name}}</ol> 
   {% endfor %}
+</div>
 
 </body>
 </html>
