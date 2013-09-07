@@ -10,15 +10,18 @@
 		<li><a href = "../mymedia")>My Media</a></li>
 		<li><a href = "../totalrecommendations")>Recommendations</a></li>
    	</div>
-	 {{error}}
+	 
     <form method = "post" name = "myForm"> {% csrf_token %}
         <input type = "text" name = "new">
         <input type = "submit">
     </form>
 
-    {% for f in friends %}
-       <pre>{{f.firstname}} {{f.lastname}}</pre>
-    {% endfor %}
+    <div id="friends">
+        {{error}}    
+        {% for f in friends %}
+            <pre>{{f.firstname}} {{f.lastname}}</pre>
+        {% endfor %}
+    </div>
 
 </body>
 </html>
