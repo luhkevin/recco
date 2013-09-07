@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'auth',
     'createaccount',
+    'profiles',
     'startpage',
     'friends',
     'MyMedia',

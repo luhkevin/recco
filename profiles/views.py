@@ -7,23 +7,24 @@ from friends.models import Friendship
 from django.contrib.auth.models import User
 from MyMedia.models import *
 
-def profile(request, target):
+def index(request, target):
     user = request.user.username
 
+    print(target)
     targetlookup = User.objects.filter(username=target)
 
-    if len(lookup) == 0:
-        return HTTPResponseRedirect('/home')
+    if len(targetlookup) == 0:
+        return HttpResponseRedirect('/home')
 
 
-    forwardfriendlookup = Friendship.objects.filter(source_user_username_exact = user, target_user_username_exact = target)
+    forwardfriendlookup = Friendship.objects.filter(source__person__user__username__exact = user, target__person__user__username__exact = target)
 
-    if len(forwardfriendlookup) = 0:
+    if len(forwardfriendlookup) == 0:
         return render(request, 'profiles/index.html', {'error': 'Friendship not found'})
 
     forwardfriendship = forwardfriendlookup[0]
 
-    backwardfriendlookup = Friendship.objects.filter(source_user_username_exact = target, target_user_username_exact = source)
+    backwardfriendlookup = Friendship.objects.filter(source__person__user__username__exact = target, target__person__user__username__exact = user)
 
     backwardfriendship = backwardfriendlookup[0]
 
@@ -60,7 +61,7 @@ def profile(request, target):
     recto = map(lambda f: f.media, recto_o)
     recfrom = map(lambda f: f.media, recfrom_o)
 
-    return render(request, 'profiles/index.html', {'error' = '', 'recto' = recto, 'recfrom' = recfrom})
+    return render(request, 'profiles/index.html', {'error':'', 'friend': target, 'recto':recto, 'recfrom':recfrom})
 
 
 
