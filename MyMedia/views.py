@@ -1,6 +1,6 @@
 # Create your views here.
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from models import Media
 
 def index(request):
@@ -11,6 +11,6 @@ def index(request):
     r.save()
   
   recs = Media.objects.order_by('name')
-  return render_to_response('MyMedia/index.html', recs)
+  return render(request, 'MyMedia/index.html', {recs: recs})
 
 
