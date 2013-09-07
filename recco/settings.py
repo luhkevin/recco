@@ -131,7 +131,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'auth',
     'startpage',
+    'friends',
     'MyMedia',
+    'TotalRecommendations',
 )
 
 # A sample logging configuration. The only tangible logging
