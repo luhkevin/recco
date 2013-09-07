@@ -16,7 +16,7 @@
     <form action="/login/" method="post"> 
         {% csrf_token %}
         {% if next %}
-        <input type="hidden" name="next" value="{{ next }}" />
+            <input type="hidden" name="next" value="{{ next }}" />
         {% endif %}
         
     <div id = "login"> 
@@ -29,6 +29,10 @@
 
         <input type="submit" value="Log In" />
     </div>
+
+    <div id = "register">
+        <input type="submit" value = "Register"
+            onclick="window.location'../createaccount';"/>
     </form>
 </body>
 </html>
