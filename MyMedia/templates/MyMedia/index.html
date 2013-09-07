@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+  <form>
+    <input type="text" name="new"><br/>
+    <input type="submit" action = ".">
+  </form>
+  
+  <br/>
+  {% for rec in recs %}
+    {rec.name} <br/>
+  {% endfor %}
+
+</body>
+</html>
