@@ -111,7 +111,7 @@ ROOT_URLCONF = 'recco.urls'
 WSGI_APPLICATION = 'recco.wsgi.application'
 
 TEMPLATE_DIRS = (
-    relative_project_path('templates'),
+    relative_project_path('../templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
