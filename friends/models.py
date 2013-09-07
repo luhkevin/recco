@@ -8,3 +8,7 @@ class Friendship(models.Model):
     source = models.ForeignKey('startpage.Person', related_name = 'source_set')
     target = models.ForeignKey('startpage.Person', related_name = 'target_set')
     recommendations = models.ManyToManyField('MyMedia.Media', through = 'MyMedia.Recommendation')
+
+
+    def __unicode__(self):
+        return self.source + ' to ' + self.target
