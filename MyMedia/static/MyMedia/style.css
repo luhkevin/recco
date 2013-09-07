@@ -16,7 +16,9 @@
 	position: relative;
 	width: 245px;
 	display: block;
-	padding: 1px 29px 2px;
+	padding: 1px 29px 0px;
+	
+
 }	
 
 #media ol{
