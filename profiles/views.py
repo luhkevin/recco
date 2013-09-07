@@ -43,7 +43,7 @@ def index(request, target):
 
 
         # create new media if it doesn't exist
-        if len(medialookup) == 0 : 
+        if len(medialookup) == 0 :
             newmedia = Media(name = newrecname);
             newmedia.save()
             recmedia = newmedia;
