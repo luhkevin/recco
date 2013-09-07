@@ -3,12 +3,12 @@
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from createuser import CreateUserForm
+from createaccountform import CreateAccountForm
 
 def createaccount(request):
-    form = CreateUserForm();
+    form = CreateAccountForm();
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+        form = CreateAccountForm(request.POST)
         if form.is_valid():
             # Process stuff
             form.save();
@@ -17,7 +17,7 @@ def createaccount(request):
             return HttpResponseRedirect('../login')
         else: 
             print('qq form isn\'t valid')
-            form = CreateUserForm()
+            form = CreateAccountForm()
 
-    return render(request, 'createaccount/create_account.html', {'form':form})
+    return render(request, 'createaccount/createaccount.html', {'form':form})
         

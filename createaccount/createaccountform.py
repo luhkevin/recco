@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from startpage.models import Person
 from django import forms
 
-class CreateUserForm(forms.Form):
+class CreateAccountForm(forms.Form):
     username = forms.CharField(max_length=30)
     firstname = forms.CharField(max_length=30)
     lastname = forms.CharField(max_length=30)
