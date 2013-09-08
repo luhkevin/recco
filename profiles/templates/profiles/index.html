@@ -38,7 +38,7 @@
             <input type = "hidden" name = "fid" value = "2">
         {% for r in recto %}
             <ol>
-            <input type = "checkbox" name = "completed"  value = {{r.name}}>
+            <input type = "checkbox" name = "completed"  value = {{r.media.name}}>
             {{r.media.name}} &nbsp; {{r.points}}
             </ol>
         {% endfor %}

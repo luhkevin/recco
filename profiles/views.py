@@ -10,7 +10,6 @@ from MyMedia.models import *
 def index(request, target):
     user = request.user.username
 
-    print(target)
     targetlookup = User.objects.filter(username=target)
 
     if len(targetlookup) == 0:
@@ -48,6 +47,8 @@ def index(request, target):
 
             newrecpoints = int(newrecptstr)
 
+            if userperson.currentpoints < newrecpoints:
+                return render(request, 'profiles/index.html', {'error':'not enough points', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o})
             # lookup media
             medialookup = Media.objects.filter(name = newrecname)
 
@@ -62,7 +63,8 @@ def index(request, target):
             # make new recommendation
             newrec = Recommendation(friends = forwardfriendship, points = newrecpoints, media = recmedia, time = timezone.now())
             newrec.save()
-            userperson.points -= newrecpoints
+
+            userperson.currentpoints -= newrecpoints
             userperson.save()
         if fid == '2':
             comps = request.POST.getlist("completed")
@@ -75,6 +77,7 @@ def index(request, target):
                         c = Completed(by = targetlookup[0].person, media = rec.media, time = timezone.now())
                         c.save()
                         rec.delete()
+                        break
     # find recommendations, to and from
     recto_o = Recommendation.objects.filter(friends = forwardfriendship)
     recfrom_o = Recommendation.objects.filter(friends = backwardfriendship)       
@@ -84,6 +87,4 @@ def index(request, target):
     recfrom = map(lambda f: f.media, recfrom_o)
 
     return render(request, 'profiles/index.html', {'error':'', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o})
-
-
 
