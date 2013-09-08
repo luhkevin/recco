@@ -21,4 +21,4 @@ class Completed(models.Model):
     time = models.DateTimeField('date completed')
 
     def __unicode__(self):
-        return self.name
+        return self.media.name

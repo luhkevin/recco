@@ -1,15 +1,23 @@
 # Create your views here.
 
 from django.shortcuts import render
-from MyMedia.models import Media
+from django.utils import timezone
+from MyMedia.models import *
 
-def index(request)
+def index(request):
     userperson = request.user.person
     
     if request.POST:
       newrec = request.POST.get("new")
-      if not Media.objects.filter(name = newrec).count() == 1:
+      medialookup = Media.objects.filter(name = newrec)
+      if not medialookup.count() == 1:
           r = Media(name = newrec)
           r.save()
-    recs = userperson.completedmedia.objects.order_by('name')
+          completedmedia = r
+      else: 
+          completedmedia = medialookup[0]
+
+      newcompleted = Completed(by = userperson, media = completedmedia, time = timezone.now())
+      newcompleted.save()
+    recs = userperson.completedmedia.all()
     return render(request, 'MyMedia/index.html', {'recs': recs})
