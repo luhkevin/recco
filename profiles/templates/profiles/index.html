@@ -1,5 +1,6 @@
 {% extends "base_sidebar.html" %}
 {% load staticfiles %}
+
 {% block content %} 
 
 
@@ -10,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'static/stylesidebar.css' %}" />
     {{error}} <br>
     <div align = "center">
-    <b> Add a recommendation </b>
+        <b> Add a recommendation </b>
     <form method = "post"> {% csrf_token %}
         <input type = "hidden" name = "fid" value = "1">
         <input type = "text" name = "new">
@@ -50,12 +51,12 @@
         </ul>
     </div>
 
-    <div class = "rightcol">
-        <b> Recommended by {{friend}} </b>
+        <div class = "rightcol">
+            <b> Recommended by {{friend}} </b>
             {% for r in recfrom %}
                 <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
             {% endfor %}
-    </div>
+        </div>
     </div>
     </div>
 {% endblock %}
