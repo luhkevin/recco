@@ -5,7 +5,11 @@ from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.contrib.auth import authenticate, login
 
+
+
 def login_user(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/home')
     username = password = ''
     if request.POST:
         username = request.POST.get('username')
