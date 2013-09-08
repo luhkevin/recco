@@ -3,9 +3,13 @@
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'TotalRecommendations/style.css' %}" />
-<div id = "media">
-    {% for total_rec in total_recs %}
-        <ol> {{total_rec.media.name}}</ol> 	
-    {% endfor %}
-</div>
+    <div id = "media">
+        <ol id="mediaList">
+            {% for total_rec in total_recs %}
+                <li id="mediaStuff">
+                    <h2>{{total_rec.media.name}}</h2> 	
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
 {% endblock %}

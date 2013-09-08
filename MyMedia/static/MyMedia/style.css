@@ -1,7 +1,3 @@
-body{
-    background-color: #F6F6F6;
-}
-
 form{
 	margin: 0 auto 20px;
 	position: relative;
@@ -39,8 +35,7 @@ form{
 	background: #CCFFFF;
 	background-color: #E8EBDF;
     width: 600px;
-    height: 60px;
-    
+    height: 60px;    
 }
 
 #media ol li h2 {

@@ -11,7 +11,9 @@
         {{error}}    
         {% for f in friends %}
             <ol> 
-                <a href= "../../profiles/{{f.user.username}}" class="noline">{{f.firstname}} {{f.lastname}}</a>
+                <a href= "../../profiles/{{f.user.username}}" class="noline">
+                    <h2>{{f.firstname}} {{f.lastname}}</h2>
+                </a>
             </ol>   
         {% endfor %}
     </div>
