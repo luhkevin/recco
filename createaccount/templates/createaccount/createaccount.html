@@ -8,20 +8,14 @@
     <title>Create New Recco Account</title>
 </head>
 <body>
-    <div align = "center">
-	<hl>Register</hl>
-    </div>
-    <!-- Can customize form with more detail: https://docs.djangoproject.com/en/dev/topics/forms/ -->
-    	<form action="/createaccount/" method="post">
-         {% csrf_token %}
-         <div id = "register">
-       	 {{ form.as_p }}
-	<div align = "center">
-   	 <input type="submit" value="Submit" />
+    <div id = register align = "left">
+    	<form action="/createaccount/" method="post"> {% csrf_token %}
+            {{ form.as_p }}
+            <div align = "center">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
 	</div>
-   	 </form>
-	</div>
-
 </body>
 
 </html>
