@@ -5,11 +5,12 @@
 <link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
 
 
-    <div id = "media">
+ <div id = "media"> 
     <form method = "post" name="myForm"> 
       {% csrf_token %}
-    <input id="submit" type="text" name="new" size="31" placeholder="Submit">
+        <input id="submit" type="text" name="new" size="31" placeholder="Submit">
     </form>
+    
     <ol id="mediaList">
         {% for rec in recs %}
             {% if rec.name %}
@@ -22,5 +23,6 @@
             {% endif %}
         {% endfor %}
     </ol>
+
   </div>
 {% endblock %}

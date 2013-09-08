@@ -1,14 +1,19 @@
 {% extends "base_sidebar.html" %}
 {% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'startpage/style.css' %}"/>
+
     <h1 align = "center"> Welcome, {{username}} </h1>
     
-    <b>Oldest Recs</b><br>
-    {% for t in rectime %}
-        {{t.media.name}} <br>
-    {% endfor %}
+    <div id = "recs"> 
+        <h4>Oldest Recs</h4>
+        {% for t in rectime %}
+            <li> {{t.media.name}} </li>
+        {% endfor %}
     
-    <b>Most Valuable Recs</b><br>
-    {% for t in recpoints %}
-        {{t.media.name}} <br>
-    {% endfor %}
+        <h4>Most Valuable Recs</h4>
+        {% for t in recpoints %}
+            <li> {{t.media.name}} </li>
+        {% endfor %}
+    </div>
 {% endblock %}
