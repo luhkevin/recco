@@ -28,10 +28,7 @@
     </div>
 
     <div id = "bothcol">
-    <div style="float: left; margin-left: 60px">
-        <ul>
-       
-	<div id = "leftcol"> 
+	<div class = "leftcol"> 
         <b> Recommended to {{friend}} </b>
     
         <form method = "post"> {% csrf_token %}
@@ -47,20 +44,13 @@
         {% endif %}
         </form> 
         </ul>
-    	</div>
-    </div>   
-
-    
-    <div style="float: right; margin-right: 60px;">
-    
-        <ul>
-            <div id = "rightcol">
-            <b> Recommended by {{friend}} </b>
-                {% for r in recfrom %}
-                <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
-                {% endfor %}
-        </ul>
     </div>
+
+    <div class = "rightcol">
+        <b> Recommended by {{friend}} </b>
+            {% for r in recfrom %}
+                <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
+            {% endfor %}
     </div>
     </div>
 

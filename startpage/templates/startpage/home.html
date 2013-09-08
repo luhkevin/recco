@@ -1,17 +1,4 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'startpage/style.css' %}" />
-<!DOCTYPE html>
-
-<html>
-  <body>
-  <h1 align = "center"> Welcome, {{username}}!</h1>
-    <div id="sidepanel"> 
-        <div id="button">
-	  <li><a href="../home")>Home</a></li>
-          <li> <a href="../mymedia")>My Media </a></li> 
-          <li> <a href="../totalrecommendations")>Recommendations</a><li>
-          <li> <a href="../friends")>Friends </a> </li>
-        </div>
-    </div>
-  </body>
-</html>
+{% extends "base_sidebar.html" %}
+{% block content %}
+    <h1 align = "center"> Welcome, {{username}} </h1>
+{% endblock %}

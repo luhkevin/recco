@@ -14,6 +14,7 @@ div{
 }
 
 #sidepanel{
+    margin-top: -58px;
     position: absolute;
     width: 200px;
 
