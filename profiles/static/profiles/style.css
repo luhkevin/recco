@@ -6,8 +6,8 @@ body{
 #bothcol{
     height:600px;
     width:500px;
-	//border: 2px solid #A0A0A0;
-   // margin-left: 625px;
+	border: 2px solid #A0A0A0;
+    margin-left: 625px;
 }
 
 #bothcol div{
@@ -17,7 +17,7 @@ body{
 }
 
 .leftcol{
-    //border: 2px solid #009900;
+    border: 2px solid #009900;
     float: left;
     margin-left: 60px;
 }
@@ -28,7 +28,7 @@ body{
 }
 
 .rightcol{
-    //border: 2px solid #FF0000;
+    border: 2px solid #FF0000;
     float: left;
     margin-left: 60px;
 }

@@ -1,10 +1,13 @@
+{% extends "base_sidebar.html" %}
 {% load staticfiles %}
+{% block content %} 
+
+
 <link rel="stylesheet" type="text/css" href="{% static 'profiles/style.css' %}" />
 
-<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{% static 'static/stylenavbar.css' %}" />
 
-<html>
-<body>
+<link rel="stylesheet" type="text/css" href="{% static 'static/stylesidebar.css' %}" />
     {{error}} <br>
     <div align = "center">
     <b> Add a recommendation </b>
@@ -55,6 +58,4 @@
     </div>
     </div>
     </div>
-
-</body>
-</html>
+{% endblock %}
