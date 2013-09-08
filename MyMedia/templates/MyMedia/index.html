@@ -5,18 +5,18 @@
 <link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
 
 
-  <div id = "media">
+    <div id = "media">
     <form method = "post" name="myForm"> 
       {% csrf_token %}
     <input id="submit" type="text" name="new" size="31" placeholder="Submit">
-  </form>
+    </form>
     <ol id="mediaList">
         {% for rec in recs %}
             {% if rec.name %}
                 <li id="movie"> 
                     <h2>{{rec.name}} </h2>
                     <span class="other_info">
-                        Category, Comments, Points
+                        Comments
                     </span>
                 </li> 	
             {% endif %}
