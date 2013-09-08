@@ -8,7 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'recco.views.home', name='home'),
     # url(r'^recco/', include('recco.foo.urls')),
-    url(r'^login/$', 'auth.views.login_user'),
+
+    url(r'^$', 'auth.views.login_user'),
 
     url(r'^createaccount/$', 'createaccount.views.createaccount'),
 
@@ -19,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^profiles/', include('profiles.urls')),
 
     url(r'^friends/', 'friends.views.index'),
+
+    url(r'^logout/', 'logout.views.logout_view'),
 
     url(r'^totalrecommendations/', 'TotalRecommendations.views.index'),
 
