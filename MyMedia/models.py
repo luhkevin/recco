@@ -13,6 +13,7 @@ class Recommendation(models.Model):
     friends = models.ForeignKey('friends.Friendship')
     media = models.ForeignKey('MyMedia.Media')
     time = models.DateTimeField('date recommended')
+    points = models.IntegerField(default=0)
 
 class Completed(models.Model):
     by = models.ForeignKey('startpage.Person')
