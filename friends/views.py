@@ -11,7 +11,7 @@ def index(request):
         newf = request.POST.get("new")
         lookup = User.objects.filter(username = newf)
 
-        if len(lookup) == 0:
+        if len(lookup) == 0 or user == newf:
             fr = Friendship.objects.filter(source__user__username__exact = user)
             friends = map(lambda f: f.target, fr)
             return render(request, 'friends/index.html', {'error': 'that is not a valid user', 'friends': friends})
@@ -19,6 +19,11 @@ def index(request):
         else:
             u = User.objects.get(username = user).person
             t = lookup[0].person
+            friends = Friendship.objects.filter(source = u, target = t)
+            if len(friends) > 0:
+                fr = Friendship.objects.filter(source__user__username__exact = user)
+                friends = map(lambda f: f.target, fr)
+                return render(request, 'friends/index.html', {'error': 'you are already friends', 'friends': friends})
             f = Friendship(source = u, target = t)
             f2 = Friendship(source = t, target = u)
             f.save()
