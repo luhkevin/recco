@@ -3,15 +3,12 @@
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'friends/style.css' %}" />
-    <form method = "post" name = "myForm"> {% csrf_token %}
-        <input type = "text" name = "new" placeholder="Submit">
-    </form>
+    
 
     <div id="friends">
         {{error}}    
         {% for f in friends %}
-            <ol> 
-                
+            <ol>  
                 <a href= "../../profiles/{{f.user.username}}" class="noline">
                     <img src = "/static/identicon.png" width="50" height="50" style="float:left;margin: 0 5px 0 "/>
                     <h2>{{f.firstname}} {{f.lastname}}</h2>
@@ -19,4 +16,8 @@
             </ol>   
         {% endfor %}
     </div>
+    
+    <form method = "post" name = "myForm"> {% csrf_token %}
+        <input type = "text" name = "new" placeholder="Submit">
+    </form>
 {% endblock %}
