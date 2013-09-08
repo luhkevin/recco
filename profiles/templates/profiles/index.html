@@ -6,6 +6,16 @@
 <link rel="stylesheet" type="text/css" href="{% static 'profiles/style.css' %}" />
 
     {{error}} <br>
+    <div id = "info" align = "center">
+        <div id = "namedisplay">
+            {{friend.firstname}} &nbsp; {{friend.lastname}}
+        </div>
+
+        <div id = "usernamedisplay">
+            {{friend.user.username}}
+        </div>
+    </div>
+
     <div align = "center">
     <b> Add a recommendation </b>
     <form method = "post"> {% csrf_token %}
@@ -28,9 +38,10 @@
     </div>
 
     <div align = "center">
+        
     <div id = "bothcol">
 	<div class = "leftcol"> 
-        <b> Recommended to {{friend}} </b>
+        <b> Recommended to {{friend.firstname}} </b>
     
         <form method = "post"> {% csrf_token %}
             <input type = "hidden" name = "fid" value = "2">
@@ -48,7 +59,7 @@
     </div>
 
     <div class = "rightcol">
-        <b> Recommended by {{friend}} </b>
+        <b> Recommended by {{friend.firstname}} </b>
             {% for r in recfrom %}
                 <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
             {% endfor %}
