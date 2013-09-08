@@ -41,23 +41,49 @@ li a:hover{
 	background: #A0A0A0;
 }
 
+
 #media {
 	margin: 0 auto 20px;
 	position: relative;
 	width: 245px;
 	display: block;
 	padding: 1px 28px 1px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    vertical-align: baseline;
 }	
 
-#media ol{
-	display: inherit;
-	margin:0px -4px 0px 0px;
-	color: #222;
-	font-size: 18px;
-	padding: 1px 15px 0px;
+#media ol li{
+	display: list-item;
+	margin-bottom: 0px; 
+   /* margin-left: 25%; */
+    margin-left: -200px;
+    margin-right: 0px;
+    margin-top: 0px;
+
+    color: #222;
+	font-size: 16px;
+    
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 9px;
+    
+    position: relative;
+    
+/*    background-clip: border-box;
+    background-origin: padding-box;
+    vertical-align: baseline;*/
+
 	border: solid 1px #939393;
 	list-style: none;
 	background: #CCFFFF;
 	background-color: #E8EBDF;
+    width: 600px;
+    height: 60px;
+    
 }
 
+#media ol li h2 {
+    margin: 0px 0px 0px 0px;
+}

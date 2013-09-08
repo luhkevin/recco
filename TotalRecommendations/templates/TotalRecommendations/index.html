@@ -1,22 +1,11 @@
+{% extends "base_sidebar.html" %}
+{% block Recommendations %}
+
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'TotalRecommendations/style.css' %}" />
-
-<!DOCTYPE html>
-
-<html>
-<body>
-	<div id = "sidepanel">
-		<li><a href = "../home")>Home</a></li>
-		<li><a href = "../mymedia")>My Media</a></li>
-		<li><a href = "../totalrecommendations")>Recommendations</a></li>
-		<li><a href = "../friends")>Friends</a></li>
-	</div>
-  </form>
-  <div id = "media">
+<div id = "media">
     {% for total_rec in total_recs %}
         <ol> {{total_rec.media.name}}</ol> 	
     {% endfor %}
-  </div>
-
-</body>
-</html>
+</div>
+{% endblock %}
