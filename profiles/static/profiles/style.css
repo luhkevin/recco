@@ -1,13 +1,10 @@
-body{
-	background-color: #F6f6f6;
-
-}
 
 #bothcol{
     height:600px;
     width:500px;
 	border: 2px solid #A0A0A0;
-    margin-left: 625px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #bothcol div{
