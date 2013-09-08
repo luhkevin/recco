@@ -3,15 +3,27 @@ body{
 
 }
 
-#leftcol{
-	border: 2px solid #009900;
-}
-
-#rightcol{
-	border: 2px solid #FF0000;
-
-}
-
 #bothcol{
-	border: 2px solid #A0A0A0;
+    height:600px;
+    width:500px;
+	//border: 2px solid #A0A0A0;
+    margin-left: 400px;
+}
+
+#bothcol div{
+    height: 80px;
+    width: 150px;
+    margin-top: 20px;
+}
+
+.leftcol{
+    //border: 2px solid #009900;
+    float: left;
+    margin-left: 60px;
+}
+
+.rightcol{
+    //border: 2px solid #FF0000;
+    float: left;
+    margin-left: 60px;
 }
