@@ -23,6 +23,6 @@ li a {
 }
 
 li a:hover{
-    font-size: 20px
+    font-size: 20px;
     background: #A0A0A0;
 }
