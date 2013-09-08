@@ -22,7 +22,7 @@ def index(request, target):
     forwardfriendlookup = Friendship.objects.filter(source = userperson, target = targetperson)
 
     if len(forwardfriendlookup) == 0:
-        return render(request, 'profiles/index.html', {'error': 'Friendship not found'})
+        return render(request, 'profiles/index.html', {'error': 'Friendship not found', 'username': userperson.firstname, 'points': userperson.currentpoints})
 
     forwardfriendship = forwardfriendlookup[0]
 
@@ -48,7 +48,7 @@ def index(request, target):
             newrecpoints = int(newrecptstr)
 
             if userperson.currentpoints < newrecpoints:
-                return render(request, 'profiles/index.html', {'error':'not enough points', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o})
+                return render(request, 'profiles/index.html', {'error':'not enough points', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o, 'username': userperson.firstname, 'points': userperson.currentpoints})
             # lookup media
             medialookup = Media.objects.filter(name = newrecname)
 
@@ -86,5 +86,5 @@ def index(request, target):
     recto = map(lambda f: f.media, recto_o)
     recfrom = map(lambda f: f.media, recfrom_o)
 
-    return render(request, 'profiles/index.html', {'error':'', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o})
+    return render(request, 'profiles/index.html', {'friend': target, 'recto':recto_o, 'recfrom':recfrom_o, 'username': userperson.firstname, 'points': userperson.currentpoints})
 

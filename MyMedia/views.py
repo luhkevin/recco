@@ -17,4 +17,4 @@ def index(request):
           newcompleted = Completed(by = userperson, media = r, time = timezone.now())
           newcompleted.save()
     recs = userperson.completedmedia.all()
-    return render(request, 'MyMedia/index.html', {'recs': recs})
+    return render(request, 'MyMedia/index.html', {'username': userperson.firstname, 'points': userperson.currentpoints, 'recs': recs})

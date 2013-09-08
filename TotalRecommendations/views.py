@@ -9,4 +9,4 @@ def index(request):
     #this is filler
     #total_recs = Media.objects.order_by('name')
 
-    return render(request, 'TotalRecommendations/index.html', {'total_recs': total_recs})
+    return render(request, 'TotalRecommendations/index.html', {'total_recs': total_recs, 'username': user.firstname, 'points': user.currentpoints})
