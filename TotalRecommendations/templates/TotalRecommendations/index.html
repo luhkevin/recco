@@ -7,7 +7,8 @@
         <ol id="mediaList">
             {% for total_rec in total_recs %}
                 <li id="mediaStuff">
-                    <h2>{{total_rec.media.name}}</h2> 	
+                    <h2>{{total_rec.media.name}}</h2>
+                    Comment: {{total_rec.comment}}
                 </li>
             {% endfor %}
         </ol>

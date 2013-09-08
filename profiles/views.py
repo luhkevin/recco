@@ -44,6 +44,7 @@ def index(request, target):
         if fid == "1":
             newrecname = request.POST.get("new")
             newrecptstr = request.POST.get("newpoints")
+            newcomment = request.POST.get("comment")
 
             newrecpoints = int(newrecptstr)
 
@@ -61,7 +62,7 @@ def index(request, target):
                 recmedia = medialookup[0]
 
             # make new recommendation
-            newrec = Recommendation(friends = forwardfriendship, points = newrecpoints, media = recmedia, time = timezone.now())
+            newrec = Recommendation(friends = forwardfriendship, points = newrecpoints, media = recmedia, time = timezone.now(), comment = newcomment)
             newrec.save()
 
             userperson.currentpoints -= newrecpoints

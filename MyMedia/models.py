@@ -14,6 +14,7 @@ class Recommendation(models.Model):
     media = models.ForeignKey('MyMedia.Media')
     time = models.DateTimeField('date recommended')
     points = models.IntegerField(default=0)
+    comment = models.CharField(max_length=50)
 
 class Completed(models.Model):
     by = models.ForeignKey('startpage.Person')
