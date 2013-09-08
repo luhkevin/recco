@@ -11,23 +11,32 @@
     <form method = "post"> {% csrf_token %}
         <input type = "hidden" name = "fid" value = "1">
         <input type = "text" name = "new">
+        <select name = "newpoints">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
         <input type = "submit">
     </form>
     </div>
 
     <div id = "bothcol">
-    <div style="float: left; margin-left: 60px">
-        <ul>
-       
-	<div id = "leftcol"> 
+	<div class = "leftcol"> 
         <b> Recommended to {{friend}} </b>
     
         <form method = "post"> {% csrf_token %}
             <input type = "hidden" name = "fid" value = "2">
         {% for r in recto %}
             <ol>
-            <input type = "checkbox" name = "completed"  value = {{r.name}}>
-            {{r.name}}
+            <input type = "checkbox" name = "completed"  value = {{r.media.name}}>
+            {{r.media.name}} &nbsp; {{r.points}}
             </ol>
         {% endfor %}
         {% if recto %}
@@ -35,20 +44,13 @@
         {% endif %}
         </form> 
         </ul>
-    	</div>
-    </div>   
-
-    
-    <div style="float: right; margin-right: 60px;">
-    
-        <ul>
-            <div id = "rightcol">
-            <b> Recommended by {{friend}} </b>
-                {% for r in recfrom %}
-                <ol>{{r.name}}</ol>
-                {% endfor %}
-        </ul>
     </div>
+
+    <div class = "rightcol">
+        <b> Recommended by {{friend}} </b>
+            {% for r in recfrom %}
+                <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
+            {% endfor %}
     </div>
     </div>
 
