@@ -41,7 +41,7 @@ li a:hover{
 	background: #A0A0A0;
 }
 
-/*
+
 #media {
 	margin: 0 auto 20px;
 	position: relative;
@@ -49,7 +49,7 @@ li a:hover{
 	display: block;
 	padding: 1px 28px 1px;
 }	
-*/
+
 #media ol li{
 	display: list-item;
 	margin-bottom: 0px; 
