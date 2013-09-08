@@ -1,13 +1,15 @@
 body{
     background-color: #F6F6F6;
+    margin:0px;
 }
 
 #sidepanel{
     position: absolute;
-    width: 200px;
+    width: 170px;
+    margin: 50px;
 }
 
-li {
+#sidepanel li {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -16,7 +18,7 @@ li {
 
 }
 
-li a {
+#sidepanel li a {
     text-decoration: none; color: #000;
     display: block;
     width: 200px
@@ -26,7 +28,7 @@ li a {
     transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
-li a:hover{
+#sidepanel li a:hover{
     font-size: 20px;
     background: #A0A0A0;
 }

@@ -1,4 +1,22 @@
+
+{% extends "base_sidebar.html" %}
+{% block content %}
+      <form method = "post" name="myForm"> 
+          {% csrf_token %}
+        <input id="submit" type="text" name="new" size="31" placeholder="Submit">
+      </form>
+      <div id = "media">
+        {% for rec in recs %}
+            {% if rec.name %}
+                <ol> {{rec.name}}</ol> 	
+            {% endif %}
+        {% endfor %}
+      </div>
+{% endblock %}
 {% load staticfiles %}
+
+
+<!--
 <link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
 
 <!DOCTYPE html>
@@ -25,3 +43,4 @@
 
 </body>
 </html>
+-->
