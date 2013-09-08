@@ -1,8 +1,32 @@
+body {
+    font-family: 'Asap', sans-serif;
+}
+
+#info {
+    height: auto;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #DFDFDF;
+}
+
+#namedisplay {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+
+}
+
+#usernamedisplay {
+    font-family: 'Asap', sans-serif;
+    font-size: 20px;
+}
+
+
 
 #bothcol{
     height:600px;
     width:500px;
-	border: 2px solid #A0A0A0;
     margin-left: auto;
     margin-right: auto;
 }
@@ -14,7 +38,6 @@
 }
 
 .leftcol{
-    border: 2px solid #009900;
     float: left;
     margin-left: 60px;
 }
@@ -25,7 +48,6 @@
 }
 
 .rightcol{
-    border: 2px solid #FF0000;
     float: left;
     margin-left: 60px;
 }

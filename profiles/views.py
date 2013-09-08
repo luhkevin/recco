@@ -87,5 +87,5 @@ def index(request, target):
     recto = map(lambda f: f.media, recto_o)
     recfrom = map(lambda f: f.media, recfrom_o)
 
-    return render(request, 'profiles/index.html', {'friend': target, 'recto':recto_o, 'recfrom':recfrom_o, 'username': userperson.firstname, 'points': userperson.currentpoints})
+    return render(request, 'profiles/index.html', {'friend': targetperson, 'recto':recto_o, 'recfrom':recfrom_o, 'username': userperson.firstname, 'points': userperson.currentpoints})
 
