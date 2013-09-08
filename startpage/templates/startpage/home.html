@@ -1,4 +1,14 @@
 {% extends "base_sidebar.html" %}
 {% block content %}
     <h1 align = "center"> Welcome, {{username}} </h1>
+    
+    <b>Oldest Recs</b><br>
+    {% for t in rectime %}
+        {{t.media.name}} <br>
+    {% endfor %}
+    
+    <b>Most Valuable Recs</b><br>
+    {% for t in recpoints %}
+        {{t.media.name}} <br>
+    {% endfor %}
 {% endblock %}

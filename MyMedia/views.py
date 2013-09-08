@@ -9,15 +9,12 @@ def index(request):
     
     if request.POST:
       newrec = request.POST.get("new")
-      medialookup = Media.objects.filter(name = newrec)
-      if not medialookup.count() == 1:
+      medialookup = Completed.objects.filter(media__name__exact = newrec)
+      medialookup = map(lambda x: x.media, medialookup)
+      if len(medialookup) == 0:
           r = Media(name = newrec)
           r.save()
-          completedmedia = r
-      else: 
-          completedmedia = medialookup[0]
-
-      newcompleted = Completed(by = userperson, media = completedmedia, time = timezone.now())
-      newcompleted.save()
+          newcompleted = Completed(by = userperson, media = r, time = timezone.now())
+          newcompleted.save()
     recs = userperson.completedmedia.all()
     return render(request, 'MyMedia/index.html', {'recs': recs})
