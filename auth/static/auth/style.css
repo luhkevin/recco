@@ -13,6 +13,19 @@
 
 body{
     background-color: #F6F6F6;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#loginbox {
+    margin-top: 100px;
+}
+
+div h1{
+    font-style: italic;
+    color: #09c;
+    font-size: 60px;
 }
 
 #login{
@@ -24,6 +37,14 @@ body{
     height: 175px;
     width: 245px;
     padding: 19px 29px 29px;
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
 }
+/*
+#login h2 {
+    float: left;
+}
+*/
+
+
+
