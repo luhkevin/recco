@@ -7,6 +7,18 @@
     <form method = "post"> {% csrf_token %}
         <input type = "hidden" name = "fid" value = "1">
         <input type = "text" name = "new">
+        <select name = "newpoints">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
         <input type = "submit">
     </form>
     <div style="float: left; width: 50%;">
@@ -19,7 +31,7 @@
         {% for r in recto %}
             <ol>
             <input type = "checkbox" name = "completed"  value = {{r.name}}>
-            {{r.name}}
+            {{r.media.name}} &nbsp; {{r.points}}
             </ol>
         {% endfor %}
         {% if recto %}
@@ -33,7 +45,7 @@
         <ul>
             <b> Recommended by {{friend}} </b>
                 {% for r in recfrom %}
-                <ol>{{r.name}}</ol>
+                <ol>{{r.media.name}} &nbsp; {{r.points}}</ol>
                 {% endfor %}
         </ul>
     </div>
