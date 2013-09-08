@@ -1,17 +1,10 @@
+{% extends "base_sidebar.html" %}
+{% block MyMediaContent %} 
+
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'MyMedia/style.css' %}" />
 
-<!DOCTYPE html>
-
-<html>
-<body>
-	<div id = "sidepanel">
-		<li><a href = "../home")>Home</a></li>
-		<li><a href = "../mymedia")>My Media</a></li>
-		<li><a href = "../totalrecommendations")>Recommendations</a></li>
-		<li><a href = "../friends")>Friends</a></li>
-	</div>
-  <form method = "post" name="myForm"> 
+<form method = "post" name="myForm"> 
       {% csrf_token %}
     <input id="submit" type="text" name="new" size="31" placeholder="Submit">
   </form>
@@ -22,6 +15,4 @@
         {% endif %}
     {% endfor %}
   </div>
-
-</body>
-</html>
+{% endblock %}
