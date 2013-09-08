@@ -14,7 +14,7 @@ def createaccount(request):
             form.save();
 
             # successful user account creation
-            return HttpResponseRedirect('../login')
+            return HttpResponseRedirect('../')
         else:
             print('qq form isn\'t valid')
             form = CreateAccountForm()

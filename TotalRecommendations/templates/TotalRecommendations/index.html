@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'TotalRecommendations/style.css' %}" />
 <div id = "media">
     {% for total_rec in total_recs %}
-        <ol> {{total_rec.media.name}}</ol> 	
+        <ol> {{total_rec.media.name}} <br> Comment: {{total_rec.comment}}</ol> 	
     {% endfor %}
 </div>
 {% endblock %}

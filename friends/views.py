@@ -18,7 +18,7 @@ def index(request):
             return render(request, 'friends/index.html', {'error': 'that is not a valid user', 'friends': friends, 'username': userperson.firstname, 'points': userperson.currentpoints})
 
         else:
-            u = request.user
+            u = userperson
             t = lookup[0].person
             friends = Friendship.objects.filter(source = u, target = t)
             if len(friends) > 0:
