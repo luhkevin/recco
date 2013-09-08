@@ -19,14 +19,14 @@ def index(request, target):
     targetperson = targetlookup[0].person
 
 
-    forwardfriendlookup = Friendship.objects.filter(source__person__user__username__exact = user, target__person__user__username__exact = target)
+    forwardfriendlookup = Friendship.objects.filter(source = userperson, target = targetperson)
 
     if len(forwardfriendlookup) == 0:
         return render(request, 'profiles/index.html', {'error': 'Friendship not found'})
 
     forwardfriendship = forwardfriendlookup[0]
 
-    backwardfriendlookup = Friendship.objects.filter(source__person__user__username__exact = target, target__person__user__username__exact = user)
+    backwardfriendlookup = Friendship.objects.filter(source = targetperson, target = userperson)
 
     backwardfriendship = backwardfriendlookup[0]
 
@@ -74,7 +74,7 @@ def index(request, target):
                         targetperson.currentpoints += rec.points
                         targetperson.lifetimepoints += rec.points
                         targetperson.save()
-                        c = Completed(by = targetlookup[0].person, media = rec.media, time = timezone.now())
+                        c = Completed(by = targetperson, media = rec.media, time = timezone.now())
                         c.save()
                         rec.delete()
                         break
