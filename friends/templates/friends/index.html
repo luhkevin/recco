@@ -11,7 +11,9 @@
         {{error}}    
         {% for f in friends %}
             <ol> 
+                
                 <a href= "../../profiles/{{f.user.username}}" class="noline">
+                    <img src = "/static/identicon.png" width="50" height="50" style="float:left;margin: 0 5px 0 "/>
                     <h2>{{f.firstname}} {{f.lastname}}</h2>
                 </a>
             </ol>   
