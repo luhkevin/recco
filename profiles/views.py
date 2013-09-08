@@ -16,6 +16,9 @@ def index(request, target):
     if len(targetlookup) == 0:
         return HttpResponseRedirect('/home')
 
+    userperson = request.user.person
+    targetperson = targetlookup[0].person
+
 
     forwardfriendlookup = Friendship.objects.filter(source__person__user__username__exact = user, target__person__user__username__exact = target)
 
@@ -41,6 +44,9 @@ def index(request, target):
 
         if fid == "1":
             newrecname = request.POST.get("new")
+            newrecptstr = request.POST.get("newpoints")
+
+            newrecpoints = int(newrecptstr)
 
             # lookup media
             medialookup = Media.objects.filter(name = newrecname)
@@ -54,13 +60,18 @@ def index(request, target):
                 recmedia = medialookup[0]
 
             # make new recommendation
-            newrec = Recommendation(friends = forwardfriendship, media = recmedia, time = timezone.now())
+            newrec = Recommendation(friends = forwardfriendship, points = newrecpoints, media = recmedia, time = timezone.now())
             newrec.save()
+            userperson.points -= newrecpoints
+            userperson.save()
         if fid == '2':
             comps = request.POST.getlist("completed")
             for rec in recto_o:
                 for m in comps:
                     if rec.media.name == m:
+                        targetperson.currentpoints += rec.points
+                        targetperson.lifetimepoints += rec.points
+                        targetperson.save()
                         c = Completed(by = targetlookup[0].person, media = rec.media, time = timezone.now())
                         c.save()
                         rec.delete()
@@ -72,7 +83,7 @@ def index(request, target):
     recto = map(lambda f: f.media, recto_o)
     recfrom = map(lambda f: f.media, recfrom_o)
 
-    return render(request, 'profiles/index.html', {'error':'', 'friend': target, 'recto':recto, 'recfrom':recfrom})
+    return render(request, 'profiles/index.html', {'error':'', 'friend': target, 'recto':recto_o, 'recfrom':recfrom_o})
 
 
 

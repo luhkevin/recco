@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 class Person(models.Model):
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
+    currentpoints = models.IntegerField(default=10)
+    lifetimepoints = models.IntegerField(default=10)
     user = models.OneToOneField(User, primary_key=True)
 
     # Reverse lookup done by: User.objects.get(pk=1)
